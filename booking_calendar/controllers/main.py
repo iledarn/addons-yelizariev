@@ -18,8 +18,9 @@ class website_booking_calendar(controller):
     @http.route(['/booking/calendar/validate'], type='json', auth='public', website=True)
     def validate(self, start, end, calendar_id):
         pass
-        
 
+    @http.route(['/booking/calendar/resource_color'], type='json', auth='public', website=True)
+    def get_resource_color(self, resource_id):
+        return request.env['resource.resource'].browse(resource_id).color
 
-        
 
